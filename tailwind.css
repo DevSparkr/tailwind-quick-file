@@ -1,0 +1,413 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom css */
+:root {
+    --primary: theme(colors.primary);
+    --secondary: theme(colors.secondary);
+    --heading: theme(colors.heading);
+}
+* {
+    box-sizing: border-box;
+    word-break: break-word;
+}
+
+@layer base {
+    body {
+        @apply font-primary text-default;
+    }
+    .container {
+        @apply mx-auto px-4;
+    }
+    .container-fluid {
+        @apply mx-auto px-4 max-w-[1300px];
+    }
+    p {
+        @apply text-default;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply mb-2 font-bold text-heading;
+    }
+    h1 {
+        @apply text-5xl;
+    }
+    h2 {
+        @apply text-4xl;
+    }
+    h3 {
+        @apply text-3xl;
+    }
+    h4 {
+        @apply text-2xl;
+    }
+    h5 {
+        @apply text-xl;
+    }
+    h6 {
+        @apply text-lg;
+    }
+}
+
+@layer components {    
+    .btn {
+        @apply border-2 border-transparent py-4 px-6 inline-block focus:outline-none transition-all relative z-10 text-lg font-semibold leading-none;
+    }
+    .btn-primary {
+        @apply text-white bg-primary;
+    }
+    .btn-primary-outline {
+        @apply text-primary border-primary hover:bg-primary hover:text-white;
+    }
+    .btn-secondary {
+        @apply bg-secondary text-white;
+    }
+    .btn-secondary-outline {
+        @apply text-secondary border-secondary hover:bg-secondary hover:text-white;
+    }
+
+    table {
+        @apply w-full;
+    }
+    table th,
+    table td {
+        @apply py-4 p-3;
+    }
+    
+}
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+.text-white p,
+.text-white li {
+    color: #fff;
+}
+
+
+/* header */
+.header-sec.scrolled .logo img {
+    max-width: 135px;
+}
+.h-menu ul {
+    @apply xl:flex relative z-40;
+}
+.h-menu li{
+    @apply relative;
+}
+.h-menu li ul{
+    @apply xl:absolute w-full xl:w-64 top-full left-0 bg-black hidden xl:block xl:py-3 xl:opacity-0 xl:invisible xl:transition-all xl:duration-500 xl:translate-y-4 z-50;
+}
+.h-menu li:hover > ul{
+    @apply opacity-100 visible translate-y-0;
+}
+li.has-children i {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 1;
+    @apply p-3 xl:p-1 xl:top-[31px] top-1 xl:-translate-y-1/2;
+}
+.h-menu li ul a{
+    @apply px-5 py-2 xl:py-1 font-medium hover:translate-x-2 transition duration-200;
+}
+
+.h-menu li a {
+    @apply xl:p-5 block relative;
+}
+.h-menu li a:hover,
+.h-menu li.active a{
+    @apply hover:text-white;
+}
+
+/* mobile-menu */
+.header-sec.scrolled {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.menutrigger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 5px);
+}
+.menutrigger.active span:nth-child(2) {
+    opacity: 0;
+}
+.menutrigger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -5px);
+}
+.mobile-menu {
+    position: fixed;
+    z-index: 30;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    visibility: hidden;
+}
+.mobile-menu-inner {
+    position: absolute;
+    width: 300px;
+    top: 0;
+    right: -300px;
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.mobile-menu.menu-opened .mobile-menu-inner {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.h-menu li.active > a{
+    @apply text-white;
+}
+.h-menu li.active ul a:before{
+    content: none;
+}
+body.menu-opened {
+    overflow: hidden;
+}
+body.menu-opened .mobile-menu{
+    visibility: visible;
+}
+body.menu-opened main{
+    @apply blur-sm;
+}
+
+.m-menu-head {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+}
+
+.menuclose {
+    display: inline-block;
+    padding: 4px;
+}
+.mobile-menu.menu-opened .menu-overlay {
+    @apply opacity-100;
+    visibility: visible;
+}
+.menu-overlay {
+    @apply bg-heading bg-opacity-20 opacity-0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    position: absolute;
+    backdrop-filter: blur(14px);
+}
+
+.m-menu-body {
+    overflow: hidden;
+    position: relative;
+}
+
+.m-menu li a {
+    @apply border-b border-primary border-opacity-20 py-4 pl-5 pr-3 w-full block;
+}
+
+.h-menu-footer {
+    @apply px-3 py-5;
+}
+
+/*===========================
+    News Stylesheet
+===========================*/
+ul.news-archive {
+    @apply bg-black text-primary flex justify-end relative max-w-[90%] ml-auto text-2xl font-bold py-5;
+}
+ul.news-archive a.active{
+    @apply text-white;
+}
+
+.news-list{
+    @apply relative grid gap-y-10;
+}
+
+.news-item {
+	@apply flex flex-wrap bg-gray-50 sm:max-w-[90%] w-full shadow;
+    box-shadow: 0 0 10px rgba(0,0,0,.05);
+}
+.news-image {
+    @apply sm:w-2/5 sm:max-w-[380px] min-h-[300px] relative overflow-hidden;
+}
+.news-image img{
+    @apply h-full w-full object-cover absolute left-0 top-0;
+}
+.news-text {
+    @apply sm:flex-1 flex flex-col justify-between px-5 py-5 lg:pl-10;
+}
+.news-title{
+    @apply font-primary font-bold;
+}
+.news-meta{
+    @apply mb-5 text-gray-900;
+}
+.news-meta span,
+.news-meta a{
+    @apply text-primary;
+}
+.news-meta a{
+    @apply hover:underline;
+}
+.news-meta .tags{
+    @apply text-inherit;
+}
+
+.news-item:nth-child(2n+1) {
+	@apply ml-auto sm:flex-row-reverse;
+}
+.news-item:nth-child(3n+1) .news-text {
+	@apply bg-[#444444]
+}
+.news-item:nth-child(3n+1) .news-meta,
+.news-item:nth-child(3n+1) .news-title,
+.news-item:nth-child(3n+3) .news-meta,
+.news-item:nth-child(3n+3) .news-title{
+    @apply text-white;
+}
+.news-item:nth-child(2) .news-text {
+	@apply bg-white;
+}
+.news-item:nth-child(3n+3) .news-text {
+	@apply bg-black;
+}
+
+.news-item:first-child {
+	@apply flex-row bg-black;
+}
+.news-item:first-child .news-image{
+    @apply sm:sm:w-3/5 relative sm:-mr-[10%] max-w-full min-h-[400px];
+}
+.news-item:first-child .news-text{
+    @apply sm:w-1/2 relative sm:mt-[5%];
+}
+
+
+
+
+#gotop {
+    height: 40px;
+    width: 40px;
+    background: var(--primary);
+    text-align: center;
+    line-height: 1.7;
+    color: #fff;
+    border-radius: 50%;
+    right: 20px;
+    bottom: 20px;
+    position: fixed;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    z-index: 30;
+}
+
+.copyright-menu a{
+    @apply text-primary;
+}
+
+.google-map iframe{
+    @apply w-full md:h-[750px] h-[500px];
+}
+
+.btn.loading::before {
+	content: "";
+	position: absolute;
+	right: 10px;
+	border-radius: 50%;
+	border: 2px solid rgba(255,255,255,.4);
+	border-top-color: #fff;
+	width: 20px;
+	height: 20px;
+	-webkit-animation: spin 1.2s linear infinite;
+	animation: spin 1.2s linear infinite;
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.field-label{
+    @apply font-medium text-lg mb-1.5;
+}
+
+/* js-cookiebar */
+.js-cookiebar{
+	position: fixed;
+	z-index: 30;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+    bottom: 0;
+    left: 0;
+}
+
+.js-cookiebar-inner {
+	background: #fff;
+    position: absolute;
+	bottom: 0;
+	padding: 30px 20px;
+	max-height: 100%;
+	overflow: auto;
+	width: 100%;
+	box-shadow: 0 0 50px rgba(0,0,0,.1);
+}
+
+.js-cookiebar input {
+	height: 16px;
+	width: 16px;
+}
+
+.js-cookiebar .btn{
+    @apply rounded py-2 text-sm;
+}
+
+.js-cookiebar p{
+    @apply text-sm;
+}
+.js-cookiebar a,
+.js-cookiebar p a{
+    @apply underline text-primary;
+}
+/* js-cookiebar */
+
+
+/* language select */
+select.lang_select {
+	background-position: right -2px center;
+	padding: 4px 15px 4px 4px;
+	text-transform: uppercase;
+	border: 0 !important;
+	line-height: 1;
+	font-weight: 600;
+	outline: 0 !important;
+	height: 25px;
+	width: 44px;
+	background-color: #fffffff5;
+	border-radius: 2px;
+	background-size: 22px;
+}

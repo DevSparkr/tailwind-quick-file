@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Starke</title>
+
+		<!-- theme style -->
+		<link href="style.css" rel="stylesheet" />
+
+	</head>
+
+	<body>
+
+        <div class="js-cookiebar cookiebar" style="display:none">
+            <div class="js-cookiebar-inner">
+                <div class="max-w-3xl mx-auto">
+                    <div class="">
+                        <h5>we use cookies</h5>
+                        <p>we use cookies (and other techniques) to collect information about the use of the platform in order to analyse and improve, for the use of social media and to ensure that advertisements are relevant to you. Read more about our cookie
+                        policy, <a href="/terms" target="_blank" class="link">terms and conditions</a> and <a href="/privacy" target="_blank" class="link">privacy statement</a>. By continuing on this site and accepting our cookies you agree to the collection of information
+                        on this basis by us and by third parties on the platform. Please customize your cookie settings below.</p>
+                        <div class="flex flex-wrap gap-x-5 gap-y-2 py-5">
+                            <div class="flex items-center gap-x-2">
+                                <input id="basic_chkbx" type="checkbox" name="items" value="true" disabled checked />
+                                <label class="" for="basic_chkbx">Basic</label>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <input id="preferences_chkbx" type="checkbox" name="items" value="true" />
+                                <label class="" for="preferences_chkbx">Preferences</label>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <input id="statistics_chkbx" type="checkbox" name="items" value="true" />
+                                <label for="statistics_chkbx">Statistics</label>
+                            </div>
+                            <div class="flex items-center gap-x-2">
+                                <input id="marketing_chkbx" type="checkbox" name="items" value="true" />
+                                <label for="marketing_chkbx">Marketing</label>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-x-3 max-w-sm">
+                            <button type="button" class="btn btn-primary" id="cookiebutton" onclick="onCookieButtonClick()">Accept</button>
+                            <button type="button" class="btn bg-gray-200" id="closeCookie">Reject</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="entire-header relative">
+            <div class="text-black text-sm overflow-hidden hidden md:block">
+                <div class="container">
+                    <div class="flex justify-end bg-[#FCF6E5]">
+                        <div class="flex justify-end flex-wrap gap-x-10 gap-y-1 relative py-3">
+                            <div class="bg-[#FCF6E5] absolute h-full w-[10000px] -left-10 top-0 z-0"></div>
+                            <div class="relative">
+                                contact: <strong>Stiftung Starke, Koenigsallee 30-32, 14193 Berlin</strong>
+                            </div>
+                            <div class="relative">
+                                e-mail: <strong>info@stiftungstarke.de</strong>
+                            </div>
+                            <div class="relative">
+                                tel: <strong>030 8257685</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-sec relative">
+                <div class="bg-black w-1/2 right-0 absolute h-full"></div>
+                <div class="container relative">
+                    <div class="flex justify-between items-center bg-black">
+                        <a href="" class="logo max-w-sm bg-[#FCF6E5] py-1 px-4 relative lg:-mt-5 lg:pb-4">
+                            <img width="170" src="assets/img/Stiftung Starke.png" alt="Logo">
+                        </a>
+                        <div class="flex items-center gap-x-2 relative">
+                            <div class="h-menu-wrap hidden xl:flex items-center">
+                                <div class="h-menu text-primary text-sm font-bold">
+                                    <ul >
+                                        <li class="active"><a href="">Home</a></li>
+                                        <li><a href="">Fields of law</a>
+                                            <ul><li class="first"><a href="fuellungen" title="Füllungstherapien">Füllungen</a></li>
+                                                <li class="active"><a href="hochwertiger-zahnersatz" title="Hochwertiger Zahnersatz">Hochwertiger Zahnersatz</a></li>
+                                                <li><a href="zahn-ästhetik" title="Ästhetische Zahnheilkunde">ästhetische Zahnheilkunde</a></li>
+                                                <li><a href="wurzelkanalbehandlung" title="Wurzelkanalbehandlung">Hochwertiger Zahnersatz</a></li>
+                                                <li><a href="prophylaxe" title="Prophylaxe">Prophylaxe</a></li>
+                                                <li><a href="parodontalerkrankungen" title="Parodontalerkrankungen">Hochwertiger Zahnersatz</a></li>
+                                                <li><a href="implantatversorgung" title="Implantatversorgung">Implantate</a></li>
+                                                <li class="last"><a href="frontzahnrestaurationen" title="Frontzahnrestaurationen">Frontzahnrestaurationen</a></li>
+                                                </ul>
+                                        </li>
+                                        <li><a href="">About us</a></li>
+                                        <li><a href="">Cost</a></li>
+                                        <li><a href="">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-x-5 xl:gap-x-10">
+                                <div class="block xl:hidden menutrigger cursor-pointer">
+                                    <span class="h-0.5 w-7 block bg-white rounded-full"></span>
+                                    <span class="h-0.5 w-7 block bg-white rounded-full my-1.5"></span>
+                                    <span class="h-0.5 w-7 block bg-white rounded-full"></span>
+                                </div>
+                            </div>
+                            <select class="lang_select">
+                                <option data-url="http://modx.stiftungstarke.de/en/">
+                                    en
+                                </option>
+                                <option data-url="http://modx.stiftungstarke.de/" selected="">
+                                    de
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu xl:hidden">
+                    <div class="menu-overlay z-20"></div>
+                    <div class="mobile-menu-inner z-30 relative bg-black">
+                        <div class="m-menu-body">
+                            <div class="m-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+		
+        <script src="assets/js/jquery-3.4.1.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+
+	</body>
+</html>
